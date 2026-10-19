@@ -35,8 +35,9 @@ small,.muted{color:#63728a;line-height:1.6}footer{margin-top:35px;color:#65728a;
 <div class="result" id="result" role="status" aria-live="polite">아직 분류하지 않았습니다.</div></section>
 <section class="panel"><h2>시연 문의</h2>
 <p>현재 운영 방식에 적합한지 먼저 확인한 뒤 구축 범위와 견적을 안내합니다. 시험 제안 가격은 29만 원이며 실제 범위에 따라 달라질 수 있습니다.</p>
-<a class="btn" href="mailto:hanbyul.business@gmail.com?subject=%5B%ED%95%99%EC%9B%90%20%EC%83%81%EB%8B%B4%20%EC%9E%90%EB%8F%99%ED%99%94%5D%20%EC%8B%9C%EC%97%B0%20%EB%AC%B8%EC%9D%98">이메일로 시연 문의하기</a>
-<p class="muted">이메일 작성 화면이 열립니다. 전송은 이용자가 직접 결정하며, 문의 이메일에 포함된 정보는 이용 중인 이메일 서비스에서 처리됩니다.</p>
+<a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hanbyul.business%40gmail.com&amp;su=%5B%ED%95%99%EC%9B%90%20%EC%83%81%EB%8B%B4%20%EC%9E%90%EB%8F%99%ED%99%94%5D%20%EC%8B%9C%EC%97%B0%20%EB%AC%B8%EC%9D%98" target="_blank" rel="noopener noreferrer">Gmail로 시연 문의하기</a>
+<button class="secondary" id="copy-email" type="button">이메일 주소 복사</button><span id="copy-status" role="status" aria-live="polite"></span>
+<p class="muted">Gmail 버튼은 Gmail 작성 화면을 엽니다. 다른 메일 서비스를 사용한다면 이메일 주소를 복사해 직접 문의해 주세요. 메일 발송은 이용자가 직접 결정합니다.</p>
 <p><strong>연락 이메일:</strong> hanbyul.business@gmail.com</p></section>
 <footer>본 페이지는 시장 검증용 시연입니다. 고객 사례·업무 시간 절감 효과는 아직 검증되지 않았습니다. 이 웹페이지는 입력 내용을 서버로 전송하거나 저장하지 않습니다. 정식 계약 전 구축 범위·지원 조건·개인정보 처리 사항을 별도로 안내합니다.</footer>
 </main><script>
@@ -55,6 +56,7 @@ review=conflict?"예":"아니오";
 }else if(found.length===1){type=found[0];review="아니오";}
 result.textContent="자동 분류: "+type+"\n검토 필요: "+review+"\n\n※ 가상 체험 결과입니다. 실제 문의는 저장되지 않습니다.";
 });
+document.getElementById("copy-email").addEventListener("click",async()=>{const email="hanbyul.business@gmail.com",status=document.getElementById("copy-status");try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw Error("unavailable");await navigator.clipboard.writeText(email);status.textContent=" 복사 완료";}catch(e){status.textContent=" 복사할 주소: "+email;}});
 document.getElementById("reset").addEventListener("click",()=>{category.value="신규상담";message.value="다음 주 월요일에 상담 예약이 가능한가요?";result.textContent="아직 분류하지 않았습니다.";});
 })();
 </script></body></html>
