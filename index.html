@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>학원 상담 문의 자동화 | 시연</title>
+<meta name="description" content="소규모 학원용 상담 신청서 접수·기록·분류·이메일 알림 자동화 시연">
+<style>
+:root{font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;color:#18243a;background:#f5f7fb}*{box-sizing:border-box}
+body{margin:0}main{max-width:920px;margin:auto;padding:38px 18px 60px}
+header{display:flex;justify-content:space-between;align-items:center;gap:10px}header b{color:#2252a5}
+.tag{font-size:12px;border:1px solid #a9b8d2;border-radius:30px;padding:7px 12px}
+h1{font-size:clamp(28px,5vw,46px);line-height:1.25;margin:48px 0 18px}h2{font-size:24px}
+.lead{font-size:18px;line-height:1.75;color:#495a73}.pill{display:inline-block;background:#e8eefb;color:#244c95;padding:8px 12px;border-radius:20px;font-size:13px}
+.panel{background:#fff;border:1px solid #dce3ee;border-radius:18px;padding:24px;margin-top:22px;box-shadow:0 4px 14px #0a22400a}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid>div{padding:15px;background:#f7f9fd;border-radius:12px}
+label{display:block;font-weight:700;margin:16px 0 6px}select,textarea{width:100%;font:inherit;border:1px solid #bac7d9;border-radius:9px;padding:12px;background:#fff}textarea{min-height:100px;resize:vertical}
+button,.btn{display:inline-block;background:#2455ac;color:white;border:0;border-radius:10px;padding:13px 18px;font-weight:700;font:inherit;text-decoration:none;cursor:pointer;margin-top:14px}
+.secondary{background:#e9eef7;color:#23416e;margin-left:8px}.result{background:#f0f6ff;border-radius:10px;padding:14px;margin-top:14px;white-space:pre-wrap}
+small,.muted{color:#63728a;line-height:1.6}footer{margin-top:35px;color:#65728a;font-size:13px;line-height:1.7}
+@media(max-width:600px){.grid{grid-template-columns:1fr}main{padding:24px 15px}header{align-items:flex-start}}
+</style></head><body><main>
+<header><b>학원 상담 업무 자동화</b><span class="tag">가상 데이터 시연 페이지</span></header>
+<section><h1>상담 신청은 접수하고,<br>기록과 분류는 자동으로.</h1>
+<p class="lead">소규모 학원·교습소를 위한 온라인 상담 신청서 구축, 문의 기록, 규칙 기반 유형 분류, 담당자 이메일 알림을 한 흐름으로 구성합니다.</p>
+<span class="pill">Google Forms + Sheets + Apps Script 기반</span></section>
+<section class="panel"><h2>제공 가능한 기능</h2><div class="grid">
+<div><strong>온라인 상담 접수</strong><p>Google Forms로 신청서 구성</p></div>
+<div><strong>문의 기록</strong><p>접수 내용을 Google Sheets에 저장</p></div>
+<div><strong>유형 분류</strong><p>선택 유형과 키워드 기반 규칙 분류</p></div>
+<div><strong>담당자 알림</strong><p>설정된 이메일로 새 문의 알림 요청</p></div></div>
+<p class="muted">기존 전화·카카오톡·네이버 상담의 자동 수집 및 연동은 현재 제공 기능에 포함되지 않습니다. 실제 학원 환경 적용은 별도 확인이 필요합니다.</p></section>
+<section class="panel"><h2>가상 문의 분류 체험</h2>
+<p class="muted">이 화면은 실제 Google 시스템과 연결되지 않은 로컬 브라우저 체험입니다. 이름·연락처를 입력하지 마세요.</p>
+<label for="category">선택한 문의 유형</label><select id="category"><option>신규상담</option><option>가격</option><option>일정</option><option>환불</option><option>기타</option></select>
+<label for="message">가상 문의 내용</label><textarea id="message">다음 주 월요일에 상담 예약이 가능한가요?</textarea>
+<button id="run" type="button">분류 체험하기</button><button class="secondary" id="reset" type="button">초기화</button>
+<div class="result" id="result" role="status" aria-live="polite">아직 분류하지 않았습니다.</div></section>
+<section class="panel"><h2>시연 문의</h2>
+<p>현재 운영 방식에 적합한지 먼저 확인한 뒤 구축 범위와 견적을 안내합니다. 시험 제안 가격은 29만 원이며 실제 범위에 따라 달라질 수 있습니다.</p>
+<a class="btn" href="mailto:hanbyul.business@gmail.com?subject=%5B%ED%95%99%EC%9B%90%20%EC%83%81%EB%8B%B4%20%EC%9E%90%EB%8F%99%ED%99%94%5D%20%EC%8B%9C%EC%97%B0%20%EB%AC%B8%EC%9D%98">이메일로 시연 문의하기</a>
+<p class="muted">이메일 작성 화면이 열립니다. 전송은 이용자가 직접 결정하며, 문의 이메일에 포함된 정보는 이용 중인 이메일 서비스에서 처리됩니다.</p>
+<p><strong>연락 이메일:</strong> hanbyul.business@gmail.com</p></section>
+<footer>본 페이지는 시장 검증용 시연입니다. 고객 사례·업무 시간 절감 효과는 아직 검증되지 않았습니다. 이 웹페이지는 입력 내용을 서버로 전송하거나 저장하지 않습니다. 정식 계약 전 구축 범위·지원 조건·개인정보 처리 사항을 별도로 안내합니다.</footer>
+</main><script>
+(function(){
+"use strict";
+const words={"신규상담":["상담","등록","가입","신청","체험"],"가격":["가격","비용","수강료","얼마","할인","견적"],"일정":["일정","예약","시간","날짜","변경","언제"],"환불":["환불","취소","반품","교환"]};
+const category=document.getElementById("category"),message=document.getElementById("message"),result=document.getElementById("result");
+document.getElementById("run").addEventListener("click",()=>{
+const selected=category.value,s=message.value.toLowerCase().replace(/\s+/g,"");
+const found=Object.keys(words).filter(k=>words[k].some(w=>s.includes(w)));
+let type="기타",review="예";
+if(["신규상담","가격","일정","환불"].includes(selected)){
+type=selected;
+const conflict=found.some(k=>k!==selected&&!(k==="신규상담"&&selected==="일정"&&!["등록","가입","신청","체험"].some(w=>s.includes(w))));
+review=conflict?"예":"아니오";
+}else if(found.length===1){type=found[0];review="아니오";}
+result.textContent="자동 분류: "+type+"\n검토 필요: "+review+"\n\n※ 가상 체험 결과입니다. 실제 문의는 저장되지 않습니다.";
+});
+document.getElementById("reset").addEventListener("click",()=>{category.value="신규상담";message.value="다음 주 월요일에 상담 예약이 가능한가요?";result.textContent="아직 분류하지 않았습니다.";});
+})();
+</script></body></html>
